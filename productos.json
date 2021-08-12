@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "nombre": "Harry Potter y la piedra filosofal",
+        "autor": "JK Rowling",
+        "precio": 1500
+    },
+
+    {
+        "id": 2,
+        "nombre": "IT",
+        "autor": "Stephen King",
+        "precio": 2700
+    },
+
+    {
+        "id": 3,
+        "nombre": "Rayuela",
+        "autor": "Julio Cortázar",
+        "precio": 1500
+    },
+
+    {
+        "id": 4,
+        "nombre": "El sobrino del mago",
+        "autor": "C.S. Lewis",
+        "precio": 1000
+    },
+
+    {
+        "id": 5,
+        "nombre": "El señor de los anillos: la comunidad del anillo",
+        "autor": "J. R. R. Tolkien",
+        "precio": 1200
+    },
+    {
+        "id": 6,
+        "nombre": "Juego de tronos",
+        "autor": "George R. R. Martin",
+        "precio": 2500
+    }
+]

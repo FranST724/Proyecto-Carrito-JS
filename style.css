@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(14, 14, 14);
+}
+
+.encabezado, .catalogo {
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+.encabezado {
+    font-size: 5em;
+    padding-left: 300px;
+}
+
+.catalogo {
+    font-size: 3em;
+    padding-bottom: 20px;
+    padding-left: 350px;
+}
