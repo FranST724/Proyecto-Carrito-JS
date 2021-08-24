@@ -2,7 +2,7 @@ body {
     background-color: rgb(14, 14, 14);
 }
 
-.encabezado, .catalogo {
+.encabezado, .catalogo, .carrito {
     font-family: 'Oswald', sans-serif;
     color: white;
 }

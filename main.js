@@ -98,3 +98,15 @@ function agregarProducto(event) {
     carrito.push(libroSeleccionado);
     mostrarCarrito();
 }
+
+// Eliminar un producto del carrito
+function eliminarProducto(event) {
+    carrito = carrito.filter(item => item.id != event.target.dataset.id);
+    mostrarCarrito();
+}
+
+// vaciar el carrito
+function vaciarCarrito() {
+    carrito = [];
+    mostrarCarrito();
+}
