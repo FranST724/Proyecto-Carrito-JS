@@ -19,6 +19,10 @@ class Libro {
     }
 }
 
+$( document ).ready(function () 
+{
+    console.log( 'El DOM está listo para usarse ');
+});
 
 // Objetos instanciados
 const libro1 = new Libro(1, 'Harry Potter y la piedra filosofal', 'JK Rowling', "imgs/Harry-potter.jpg", 1500);
