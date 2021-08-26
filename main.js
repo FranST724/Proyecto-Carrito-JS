@@ -65,11 +65,12 @@ let carrito = [];
 
 
 function mostrarCarrito() {
+    console.log(carrito)
     let acumuladorCarritoHTML = ``;
 
     for (let i = 0; i < carrito.length; i++) {
         let template = `
-        <div class="card" style="width:200px">
+        <div class="card" style="width:200px" id=${carrito[i].nombre}-${carrito[i].id}>
             <img class="card-img-top" src=${carrito[i].imagen} alt="Card image" style="width:100%">
             <div class="card-body">
                 <h4 class="card-title">${carrito[i].nombre.replaceAll("_", " ")}</h4>
@@ -94,10 +95,10 @@ function mostrarCarrito() {
 
 
 function agregarProducto(event) {
-    let libroSeleccionado = new Libro(event.target.dataset.id,
+    let libroSeleccionado = new Libro(`${event.target.dataset.id}${Math.floor(Math.random()*100)}`,
                                         event.target.dataset.nombre,
-                                        event.target.dataset.autor, 
-                                        event.target.dataset.imagen, 
+                                        event.target.dataset.autor,
+                                        event.target.dataset.imagen,
                                         event.target.dataset.precio);
     carrito.push(libroSeleccionado);
     mostrarCarrito();
@@ -105,8 +106,11 @@ function agregarProducto(event) {
 
 // Eliminar un producto del carrito
 function eliminarProducto(event) {
+    console.log('event.target', event.target.dataset, `#${event.target.dataset.nombre}-${event.target.dataset.id}`)
     carrito = carrito.filter(item => item.id != event.target.dataset.id);
-    mostrarCarrito();
+    $(`#${event.target.dataset.nombre}-${event.target.dataset.id}`).fadeOut("normal", function() {
+        mostrarCarrito()
+    });
 }
 
 // vaciar el carrito
