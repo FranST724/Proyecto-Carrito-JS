@@ -9,7 +9,7 @@ body {
 
 .encabezado {
     font-size: 5em;
-    padding-left: 300px;
+    padding-left: 9em;
 }
 
 .catalogo {
@@ -33,3 +33,51 @@ body {
     justify-content: space-between;
     flex-direction: column;
 }
+
+   header {
+    display: flex;
+    align-items: center;
+    padding-top: 1%;
+  }
+  
+  header {
+    background-color: #1e1e1e;
+  }
+
+  .navegador {
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    width: 60em;
+  }
+
+    li a {
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    list-style: none;
+  }
+  
+  .nav-links li {
+    display: inline-block;
+    padding: 0px 50px;
+  }
+
+  .nav-links li a {
+    transition: all 0.3s ease 0s;
+  }
+
+  .nav-links li a:hover {
+    color: #52aff7;
+    transform: scale(1.1);
+  }
+
+  .div-libreria {
+      background-color: #52aff7;
+      width: 100%;
+      padding: 2%;
+      margin-bottom: 2%;
+  }
