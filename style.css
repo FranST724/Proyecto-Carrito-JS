@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(14, 14, 14);
+    background-color: rgb(21, 21, 21);
 }
 
 .encabezado, .catalogo, .carrito {
@@ -39,9 +39,16 @@ body {
     align-items: center;
     padding-top: 1%;
   }
-  
+
+  .logo {
+    width: 100px;
+    margin: 10px;
+    object-fit: cover;
+  }
+
+
   header {
-    background-color: #1e1e1e;
+    background-color: #072443;
   }
 
   .navegador {
@@ -71,12 +78,12 @@ body {
   }
 
   .nav-links li a:hover {
-    color: #52aff7;
+    color: #cd9e2a;
     transform: scale(1.1);
   }
 
   .div-libreria {
-      background-color: #52aff7;
+      background-color: #1a8714;
       width: 100%;
       padding: 2%;
       margin-bottom: 2%;

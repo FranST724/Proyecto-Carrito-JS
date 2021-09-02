@@ -118,3 +118,20 @@ function vaciarCarrito() {
     carrito = [];
     mostrarCarrito();
 }
+
+$( document ).ready(function() {
+    const APIURL = 'https://jsonplaceholder.typicode.com/posts';
+    const infoPost = { nombre: 'Franco'};
+
+    $("body").append ('<button type="button" class="btn btn-primary" id="button1" >Enviar</button>');
+    $('#button1').click(() => {
+        $.ajax({
+            method: "POST",
+            url: APIURL,
+            data: infoPost,
+            success: function(respuesta){
+                $("body").append(`<div>${respuesta.nombre}</div>`);
+            }
+        });
+    });
+});
