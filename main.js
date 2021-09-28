@@ -23,7 +23,8 @@ class Libro {
     console.log("El DOM estÃ¡ listo para usarse ");
   });
   
-  // Objetos instanciados
+  // Instanciamos los objetos
+
   const libro1 = new Libro(
     1,
     "Harry Potter y la piedra filosofal",
@@ -31,7 +32,13 @@ class Libro {
     "imgs/Harry-potter.jpg",
     1500
   );
-  const libro2 = new Libro(2, "IT", "Stephen King", "imgs/IT.jpg", 2700);
+  const libro2 = new Libro(
+    2, 
+    "IT", 
+    "Stephen King", 
+    "imgs/IT.jpg", 
+    2700
+    );
   const libro3 = new Libro(
     3,
     "Rayuela",
@@ -50,7 +57,7 @@ class Libro {
     5,
     "El seÃ±or de los anillos: la comunidad del anillo",
     "J. R. R. Tolkien",
-    "imgs/El-seÃ±or-de-los-anillos.jpg",
+    "imgs/El-señor-de-los-anillos.jpg",
     1200
   );
   const libro6 = new Libro(
@@ -61,10 +68,16 @@ class Libro {
     2500
   );
   
+  // Construimos un array con los objetos como elementos
+
+  // Creamos la vista de los productos con la info de los objetos instanciados //
+
   const stock = [libro1, libro2, libro3, libro4, libro5, libro6];
   
+  // En esta variable vamos acumulando los templates generados por el ciclo
   let acumuladorStockHTML = ``;
   
+  // En este ciclo vamos generando un template por cada producto en stock
   for (let i = 0; i < stock.length; i++) {
     let template = `
       <div class="card" style="width:200px">
@@ -86,13 +99,20 @@ class Libro {
       </div>
       `;
   
-    acumuladorStockHTML += template;
+    acumuladorStockHTML += template; // Acá concatenamos cada template con los acumulados
   }
   
+  // Enviamos los templates acumulados al HTML
   document.querySelector("#stock").innerHTML = acumuladorStockHTML;
   
+
+  // Creamos el carrito //
+
+// Creamos el array vacío del carrito
   let carrito = [];
   
+
+  // Creamos la función para la vista del carrito en el HTML
   function mostrarCarrito() {
     console.log(carrito);
     let acumuladorCarritoHTML = ``;
@@ -129,6 +149,7 @@ class Libro {
     document.querySelector("#carrito").innerHTML = acumuladorCarritoHTML;
   }
   
+  // Creamos la función para agregar productos al carrito
   function agregarProducto(event) {
     let libroSeleccionado = new Libro(
       `${event.target.dataset.id}${Math.floor(Math.random() * 100)}`,
@@ -163,10 +184,7 @@ class Libro {
     mostrarCarrito();
   }
   
-  // const provincias = fetch(
-  //   "https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre"
-  // );
-  // console.log(provincias);
+  // Modal para seleccionar la localidad del envío gratuito
   const cambiaElSelect = (event) => {
     console.log("=============", event.target.value);
     getAllCities(event.target.value);
@@ -174,7 +192,6 @@ class Libro {
   
   const cambiaElSelect2 = (event) => {
     console.log("=============", event.target.value);
-    //getAllCities(event.target.value);
   };
   function mostrarProvincias(provincias) {
     let acumuladorCarritoHTML = `         
@@ -246,21 +263,9 @@ class Libro {
       console.log("===============", err);
     }
   };
-  
-  // const getAllStates2 = () => {
-  //   return fetch(
-  //     "https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre"
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       const { provincias } = data;
-  //       mostrarProvincias(provincias);
-  //     })
-  //     .catch((err) => {
-  //       console.error("fetch failed", err);
-  //     });
-  // };
-  
+
+  // Finalizar compra
+
   const finalizarCompra = () => {
     getAllStates();
   };
